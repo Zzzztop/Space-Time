@@ -1,0 +1,8 @@
+05-24 16:21:23.704 [main] INFO  c.z.admin.AdminLoginApplicationTests - Starting AdminLoginApplicationTests on DESKTOP-1VMJFH1 with PID 12756 (started by ztop in D:\service\idea-workspace\Demo\admin-login)
+05-24 16:21:23.706 [main] DEBUG c.z.admin.AdminLoginApplicationTests - Running with Spring Boot v1.5.15.RELEASE, Spring v4.3.18.RELEASE
+05-24 16:21:23.706 [main] INFO  c.z.admin.AdminLoginApplicationTests - No active profile set, falling back to default profiles: default
+05-24 16:21:26.128 [main] INFO  c.z.admin.AdminLoginApplicationTests - Started AdminLoginApplicationTests in 2.697 seconds (JVM running for 3.623)
+05-24 16:25:48.897 [main] INFO  c.z.admin.AdminLoginApplicationTests - Starting AdminLoginApplicationTests on DESKTOP-1VMJFH1 with PID 10236 (started by ztop in D:\service\idea-workspace\Demo\admin-login)
+05-24 16:25:48.901 [main] DEBUG c.z.admin.AdminLoginApplicationTests - Running with Spring Boot v1.5.15.RELEASE, Spring v4.3.18.RELEASE
+05-24 16:25:48.901 [main] INFO  c.z.admin.AdminLoginApplicationTests - No active profile set, falling back to default profiles: default
+05-24 16:25:51.354 [main] INFO  c.z.admin.AdminLoginApplicationTests - Started AdminLoginApplicationTests in 2.705 seconds (JVM running for 3.52)
