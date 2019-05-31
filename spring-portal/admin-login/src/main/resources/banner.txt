@@ -1,0 +1,8 @@
+__________ __
+\____    //  |_  ____ ______
+  /     /\   __\/  _ \\____ \
+ /     /_ |  | (  <_> )  |_> >
+/_______ \|__|  \____/|   __/
+        \/            |__|
+
+:: Project (version:${application.version}) ::       ::Spring-Boot:: (${spring-boot.version})
