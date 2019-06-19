@@ -9,4 +9,6 @@ public interface AccountService {
     ResponseData login(String name ,String pwd);
 
     ResponseData register(UserInfo userInfo);
+
+    ResponseData sendEmailCaptcha(String email);
 }

@@ -51,4 +51,12 @@ public class ClientController {
         logger.info(MessageFormat.format("qiut ClientController, end to register , response info {0}",responseData.toString()));
         return ResponseEntity.ok().body(responseData);
     }
+
+    @RequestMapping(value = "/z1/admin/sendEmailCaptcha")
+    public ResponseEntity<ResponseData> sendEmailCode(HttpServletRequest request,String email){
+        logger.info(MessageFormat.format("enter ClientController, start to sendEmailCode , email data{0}",email));
+        ResponseData responseData = accountService.sendEmailCaptcha(email);
+        logger.info(MessageFormat.format("qiut ClientController, end to sendEmailCode , response info {0}",responseData.toString()));
+        return ResponseEntity.ok().body(responseData);
+    }
 }

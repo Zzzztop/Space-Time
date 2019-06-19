@@ -4,8 +4,12 @@ import com.ztop.admin.Utils.DateUtil;
 import com.ztop.admin.Utils.Md5Util;
 import com.ztop.admin.bean.UserInfo;
 import com.ztop.admin.bean.vo.ResponseData;
+import com.ztop.admin.mapper.EmailCaptchaMapper;
 import com.ztop.admin.mapper.UserInfoMapper;
 import com.ztop.admin.service.AccountService;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -23,6 +27,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private UserInfoMapper userInfoMapper;
+    @Autowired
+    private EmailCaptchaMapper emailCaptchaMapper;
 
     @Override
     public ResponseData login(String name, String pwd) {
@@ -63,6 +69,35 @@ public class AccountServiceImpl implements AccountService {
         userInfoMapper.saveUserInfo(userInfo);
         responseData.setCode("0");
         responseData.setMsg("注册成功");
+        return responseData;
+    }
+
+    @Override
+    public ResponseData sendEmailCaptcha(String email) {
+        ResponseData responseData = new ResponseData();
+        if (email.matches("11")){
+            responseData.setCode("1");
+            responseData.setMsg("邮箱格式不正确");
+            return responseData;
+        }
+    //TODO 写了一半 头疼 缓缓
+        try{
+            Email sendemail = new SimpleEmail();
+            sendemail.setHostName("smtp.googlemail.com");//邮箱的SMTP服务器
+            sendemail.setSmtpPort(465);
+            //设置发送人到的邮箱和用户名和授权码(授权码是自己设置的)
+            sendemail.setAuthenticator(new DefaultAuthenticator("username", "password"));
+            sendemail.setSSLOnConnect(true);
+            sendemail.setFrom("user@gmail.com");//发送人
+            sendemail.setSubject("TestMail");//设置发送主题
+            sendemail.setMsg("This is a test mail ... :-)");//设置发送内容
+            sendemail.addTo("foo@bar.com");//设置收件人
+            sendemail.send();//进行发送
+        }catch (Exception e){
+
+        }
+        responseData.setCode("0");
+        responseData.setMsg("发送成功");
         return responseData;
     }
 }

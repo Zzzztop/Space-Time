@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ztop.admin.mapper.EmailCaptchaMapper">
+    <insert id="saveUserInfo" parameterType="com.ztop.admin.bean.UserInfo">
+        insert into userinfo
+        (token,name,inco,phone,email,permission,password,create_time,updata_time,outdata_time)
+        values
+        (#{token},#{name},#{inco},#{phone},#{email},#{permission},#{password},#{create_time},#{updata_time},#{outdata_time})
+    </insert>
+    <select id="getUserInfoByName" resultType="com.ztop.admin.bean.UserInfo">
+      select * from userinfo where email = #{email}
+    </select>
+</mapper>
